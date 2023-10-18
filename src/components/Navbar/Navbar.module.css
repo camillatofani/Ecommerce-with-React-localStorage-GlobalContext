@@ -1,0 +1,12 @@
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 16px;
+}
+.logo {
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #003B53;
+	font-size: 25px;
+}

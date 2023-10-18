@@ -1,0 +1,27 @@
+.hero {
+	padding: 80px;
+	text-align: center;
+	background-color: #003B5317;
+}
+.hero .border {
+	padding: 60px;
+	border: solid 2px #003B53;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.hero .title {
+	color: #003B53;
+	font-size: 60px;
+}
+.hero img {
+	width: 240px;
+	margin: 20px;
+}
+.hero .touchpoint {
+	display: flex;
+}
+.hero button {
+	margin: 0px 10px;
+}

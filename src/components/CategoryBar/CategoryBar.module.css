@@ -1,0 +1,24 @@
+.categoryBar {
+	background-color: #003B53;
+	color: white;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.title {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 22px;
+	margin-right: 20px;
+}
+.single {
+	margin: 0px 10px;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	opacity: 0.6;
+}

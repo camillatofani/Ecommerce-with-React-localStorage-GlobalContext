@@ -1,0 +1,14 @@
+.singleProduct {
+	border: solid 1px #003B53;
+	padding: 20px;
+	text-align: center;
+}
+.singleProduct img {
+	width: 100%;
+	margin: 20px 0px;
+}
+.singleProduct .bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
