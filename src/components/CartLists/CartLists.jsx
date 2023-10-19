@@ -17,7 +17,7 @@ function CartLists({ cart, clearCart, removeItem }) {
 							</div>
 						</div>
 						<div>
-							<button className='primary' onClick={ (e) => removeItem(item.id) }>Delete</button>
+							<button className='primary' onClick={ () => removeItem(item.id) }>Delete</button>
 						</div>
 					</div>
 				))
