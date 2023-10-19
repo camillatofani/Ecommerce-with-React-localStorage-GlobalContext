@@ -1,0 +1,31 @@
+.cartListsBtn {
+	margin-top: 20px;
+}
+.singleItem {
+	padding: 20px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	border: solid 1px #003B53;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.singleItem .details {
+	display: flex;
+	align-items: center;
+}
+.singleItem .text {
+	display: flex;
+	flex-direction: column;
+}
+.singleItem img {
+	width: 80px;
+}
+.singleItem .name {
+	font-weight: 700;
+	color: #FF4C63;
+}
+.singleItem .brand {
+	color: #989898;
+	font-size: 12px;
+}

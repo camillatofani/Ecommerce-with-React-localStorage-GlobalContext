@@ -4,9 +4,16 @@ nav {
 	align-items: center;
 	padding: 8px 16px;
 }
-.logo {
+nav .logo {
 	text-transform: uppercase;
 	font-weight: 700;
 	color: #003B53;
 	font-size: 25px;
+}
+nav a {
+	color: #003B53;
+	text-decoration: none;
+}
+nav a:hover {
+	color: #FF4C63;
 }

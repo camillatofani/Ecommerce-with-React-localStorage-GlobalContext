@@ -6,19 +6,19 @@
 	justify-content: center;
 	align-items: center;
 }
-.title {
+.categoryBar .title {
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 22px;
 	margin-right: 20px;
 }
-.single {
+.categoryBar .single {
 	margin: 0px 10px;
 }
-a {
+.categoryBar a {
 	text-decoration: none;
 	color: white;
 }
-a:hover {
+.categoryBar a:hover {
 	opacity: 0.6;
 }
