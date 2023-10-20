@@ -14,12 +14,14 @@ function Products() {
 		}
 	}
 	const category = getCategory()
-	var filteredProducts
-	if (category) {
-		filteredProducts = products.filter(product => product.category !== category)
-	} else {
-		filteredProducts = products
+	const getFilterdProducts = () => {
+		if (category) {
+			return products.filter(product => product.category !== category)
+		} else {
+			return products
+		}
 	}
+	var filteredProducts = getFilterdProducts()
 
 	return (
 		<div className={ styles.products }>
