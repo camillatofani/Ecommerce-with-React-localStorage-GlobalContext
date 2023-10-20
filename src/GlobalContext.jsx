@@ -9,22 +9,55 @@ export function useGlobalContext() {
 }
 
 export function GlobalProviderComponent({ children }) {
-	const [people, setPeople] = useState(['marta'])
-	const [products, setProducts] = useState([])
+	const products = [
+		{
+			id: 1,
+			name: 'iPhone',
+			brand: 'Apple',
+			price: 799.90
+		},
+		{
+			id: 2,
+			name: 'Tastiera',
+			brand: 'Samsung',
+			price: 19.90
+		},
+		{
+			id: 3,
+			name: 'Nome',
+			brand: 'Xiaomi',
+			price: 19.90
+		}
+	]
+	var initialStateCart = JSON.parse(localStorage.getItem('cart')) || []
+	const [cart, setCart] = useState(initialStateCart)
+	console.log(initialStateCart)
 
-	const addPerson = (name) => {
-		setPeople([...people, name])
+	const addItemCart = (productId) => {
+		const newItem = products.filter((elem) => {
+			if (elem.id === productId) {
+				return elem
+			}
+		})
+		if (initialStateCart.length > 0) {
+			const updatedCart = [...initialStateCart, newItem[0]]
+			localStorage.setItem('cart', JSON.stringify(updatedCart))
+		} else {
+			localStorage.setItem('cart', JSON.stringify(newItem))
+		}
+		setCart((old) => { return [...old, newItem[0]] })
 	}
 
-	const addProduct = (productName) => {
-		setProducts([...products, productName])
+	const clearCart = () => {
+		localStorage.removeItem('cart')
+		setCart([])
 	}
 
 	const globalValues = {
-		people,
 		products,
-		addPerson,
-		addProduct,
+		cart,
+		addItemCart,
+		clearCart,
 	}
 
 	return <GlobalProvider value={ globalValues }>{ children }</GlobalProvider>
