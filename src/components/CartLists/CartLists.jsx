@@ -30,7 +30,7 @@ function CartLists({ cart, clearCart, removeItem }) {
 CartLists.propTypes = {
 	clearCart: PropTypes.func,
 	removeItem: PropTypes.func,
-	cart: PropTypes.object.isRequired
+	cart: PropTypes.array.isRequired
 }
 
 

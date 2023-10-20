@@ -11,14 +11,18 @@ function Cart() {
 	const [cart, setCart] = useState([...listCart])
 
 	function clearCart() {
-		localStorage.removeItem('cart');
-		setCart([]);
+		localStorage.removeItem('cart')
+		setCart([])
 	}
 
 	function removeItem(item) {
 		console.log(item)
-		// setCart([newCart])
-		// localStorage.setItem('cart', JSON.stringify([newCart]))
+		let newArray = cart.filter((cartItem) => cartItem.id !== item)
+		setCart(newArray)
+		const lists = JSON.parse(localStorage.getItem('cart'))
+		if (lists) {
+			localStorage.setItem('cart', JSON.stringify(newArray))
+		}
 	}
 
 	return (

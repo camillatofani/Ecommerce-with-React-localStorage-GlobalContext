@@ -21,21 +21,21 @@ function Products() {
 		{
 			id: 3,
 			name: 'Nome',
-			brand: 'Samsung',
+			brand: 'Xiaomi',
 			price: 19.90
 		}
 	]
 
 	function addItem(id) {
-		const item = products[id - 1];
-		const lists = JSON.parse(localStorage.getItem('cart'));
+		const item = products[id - 1]
+		const lists = JSON.parse(localStorage.getItem('cart'))
 		if (lists) {
 			localStorage.setItem('cart', JSON.stringify([...lists, item]))
 		} else {
 			localStorage.setItem('cart', JSON.stringify([item]))
 		}
 		setNotify(true)
-		setTimeout(() => setNotify(false), 2000);
+		setTimeout(() => setNotify(false), 2000)
 	}
 
 	return (

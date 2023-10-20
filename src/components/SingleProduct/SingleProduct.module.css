@@ -12,3 +12,13 @@
 	justify-content: space-between;
 	align-items: center;
 }
+.singleProduct button:disabled,
+.singleProduct button[disabled] {
+	cursor: not-allowed;
+	background-color: #cccccc;
+	color: #666666;
+}
+.singleProduct button:disabled:hover,
+.singleProduct button[disabled]:hover {
+	opacity: 1;
+}
