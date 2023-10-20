@@ -1,5 +1,6 @@
 import styles from './Products.module.css'
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 import SingleProduct from './../SingleProduct/SingleProduct'
 
 function Products() {
@@ -50,6 +51,11 @@ function Products() {
 			{ notify && <div>Add!</div> }
 		</div>
 	)
+}
+
+
+Products.propTypes = {
+	setItemCount: PropTypes.func
 }
 
 export default Products

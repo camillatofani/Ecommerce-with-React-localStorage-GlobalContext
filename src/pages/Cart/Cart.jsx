@@ -1,8 +1,8 @@
 import styles from './Cart.module.css'
-import Navbar from './components/Navbar/Navbar'
-import Title from './components/BigTitle/BigTitle'
-import CartEmpty from './components/CartEmpty/CartEmpty'
-import CartLists from './components/CartLists/CartLists'
+import Navbar from './../../components/Navbar/Navbar'
+import Title from './../../components/BigTitle/BigTitle'
+import CartEmpty from './../../components/CartEmpty/CartEmpty'
+import CartLists from './../../components/CartLists/CartLists'
 import { useState } from 'react'
 
 function Cart() {
