@@ -15,21 +15,31 @@ export function GlobalProviderComponent({ children }) {
 			id: 1,
 			name: 'iPhone',
 			brand: 'Apple',
-			price: 799.90
+			price: 799.90,
+			category: 'tastiere'
 		},
 		{
 			id: 2,
 			name: 'Tastiera',
 			brand: 'Samsung',
-			price: 19.90
+			price: 19.90,
+			category: 'tastiere'
 		},
 		{
 			id: 3,
 			name: 'Nome',
 			brand: 'Xiaomi',
-			price: 19.90
+			price: 19.90,
+			category: 'smart'
 		}
 	]
+
+	const categories = []
+	for (const product of products) {
+		if (!categories.includes(product.category)) {
+			categories.push(product.category)
+		}
+	}
 
 	// Cart inital state
 	var initialStateCart = JSON.parse(localStorage.getItem('cart')) || []
@@ -70,6 +80,7 @@ export function GlobalProviderComponent({ children }) {
 	const globalValues = {
 		// Products
 		products,
+		categories,
 		// Cart
 		cart,
 		addItem,

@@ -1,13 +1,19 @@
 import styles from './CategoryBar.module.css'
+import { useGlobalContext } from './../../GlobalContext'
+import { Link } from 'react-router-dom'
 
 function CategoryBar() {
+	const { categories } = useGlobalContext()
+
 	return (
 		<div className={ styles.categoryBar }>
-			<div className={styles.title}>Categorie</div>
-			<a href='#' className={styles.single}>Display</a>
-			<a href='#' className={styles.single}>Tastiere</a>
-			<a href='#' className={styles.single}>Mouse</a>
-			<a href='#' className={styles.single}>Microfoni</a>
+			<div className={ styles.title }>Categorie</div>
+			<div className={ styles.single }><Link to='/'>All categories</Link></div>
+			{ categories.map((category, index) => (
+				<div key={ index } className={ styles.single }>
+					<Link to={ `/?category=${ category }` }>{category}</Link>
+				</div>
+			))}
 		</div>
 	)
 }
