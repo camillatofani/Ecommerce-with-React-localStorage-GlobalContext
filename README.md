@@ -17,7 +17,7 @@ React Project with Vite
 - You can remove a single product from the cart or all the products
 - The localStorage help you in this project to mantain the list of product in the cart
 - This project it isn't responsive because i want to concentrate to the functionality
-- 
+
 ### Download and try
 <a name="download"></a>
 
