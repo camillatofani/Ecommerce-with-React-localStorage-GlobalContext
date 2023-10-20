@@ -16,7 +16,7 @@ function Products() {
 	const category = getCategory()
 	const getFilterdProducts = () => {
 		if (category) {
-			return products.filter(product => product.category !== category)
+			return products.filter(product => product.category === category)
 		} else {
 			return products
 		}
@@ -27,7 +27,7 @@ function Products() {
 		<div className={ styles.products }>
 			{
 				filteredProducts.map((product) => (
-					<SingleProduct addItem={ () => addItem(product.id) } key={ product.id } id={ product.id } text={ product.name } brand={ product.brand } price={ product.price } />
+					<SingleProduct addItem={ () => addItem(product.id) } key={ product.id } id={ product.id } text={ product.name } brand={ product.brand } category={ product.category } price={ product.price } />
 				))
 			}
 		</div>

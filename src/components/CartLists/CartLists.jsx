@@ -1,5 +1,4 @@
 import styles from './CartLists.module.css'
-import img from './../../assets/images/smartphone.jpg'
 import { useGlobalContext } from './../../GlobalContext'
 
 function CartLists() {
@@ -11,7 +10,7 @@ function CartLists() {
 				cart.map((item, index) => (
 					<div className={ styles.singleItem } key={ index }>
 						<div className={styles.details}>
-							<img src={ img } />
+							<img src={ `/assets/images/${ item.brand.toLowerCase() }.jpg` } />
 							<div className={styles.text}>
 								<p className={ styles.name }>{ item.name }</p>
 								<p className={ styles.brand }>{ item.brand }</p>

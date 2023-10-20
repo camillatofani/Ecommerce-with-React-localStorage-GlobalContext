@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
 import styles from './SingleProduct.module.css'
-import img from './../../assets/images/smartphone.jpg'
 import { useState, useEffect } from 'react'
 
-function SingleProduct({ id, text, brand, price, addItem }) {
+function SingleProduct({ id, text, brand, category, price, addItem }) {
 	const [btn, setBtn] = useState(true)
 
 	useEffect(() => {
@@ -19,8 +18,11 @@ function SingleProduct({ id, text, brand, price, addItem }) {
 
 	return (
 		<div className={ styles.singleProduct }>
-			<div>{ text }</div>
-			<div><img src={ img } /></div>
+			<div>
+				<div className={styles.name}>{ text }</div>
+				<div className={ styles.category }>{ category.toUpperCase() }</div>
+			</div>
+			<div><img src={ `/assets/images/${ brand.toLowerCase() }.jpg` } /></div>
 			<div className={styles.bottom}>
 				<button data-id={ id } className='primary' onClick={ addItem } disabled={ !btn }>Add</button>
 				<div>{ brand }</div>
@@ -35,6 +37,7 @@ SingleProduct.propTypes = {
 	id: PropTypes.number.isRequired,
 	text: PropTypes.string.isRequired,
 	brand: PropTypes.string.isRequired,
+	category: PropTypes.string.isRequired,
 	price: PropTypes.number.isRequired
 }
 

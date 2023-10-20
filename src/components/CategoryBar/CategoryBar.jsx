@@ -11,7 +11,7 @@ function CategoryBar() {
 			<div className={ styles.single }><Link to='/'>All categories</Link></div>
 			{ categories.map((category, index) => (
 				<div key={ index } className={ styles.single }>
-					<Link to={ `/?category=${ category }` }>{category}</Link>
+					<Link to={ `/?category=${ category }` }>{ category.charAt(0).toUpperCase() }{ category.slice(1) }</Link>
 				</div>
 			))}
 		</div>

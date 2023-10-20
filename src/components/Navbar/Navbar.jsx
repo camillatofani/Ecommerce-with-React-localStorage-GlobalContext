@@ -10,7 +10,7 @@ function Navbar() {
 	return (
 		<nav>
 			<div><Link to='/'>Home</Link></div>
-			<div className={ styles.logo }>FRICA</div>
+			<div className={ styles.logo }>TECH</div>
 			<div><Link to='/cart'>{ cart.length }<FontAwesomeIcon icon={ faCartShopping } /></Link></div>
 		</nav>
 	)

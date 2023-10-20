@@ -13,24 +13,24 @@ export function GlobalProviderComponent({ children }) {
 	const products = [
 		{
 			id: 1,
-			name: 'iPhone',
+			name: 'iPhone 15',
 			brand: 'Apple',
-			price: 799.90,
-			category: 'tastiere'
+			price: 979.00,
+			category: 'smartphone'
 		},
 		{
 			id: 2,
-			name: 'Tastiera',
+			name: 'Galaxy A33',
 			brand: 'Samsung',
-			price: 19.90,
-			category: 'tastiere'
+			price: 249.00,
+			category: 'smartphone'
 		},
 		{
 			id: 3,
-			name: 'Nome',
-			brand: 'Xiaomi',
-			price: 19.90,
-			category: 'smart'
+			name: 'GPRO',
+			brand: 'Logitech',
+			price: 99.99,
+			category: 'tastiere'
 		}
 	]
 
