@@ -6,14 +6,14 @@ import { useGlobalContext } from './../../GlobalContext'
 
 function Products() {
 	const [notify, setNotify] = useState(false)
-	const { products, addItemCart } = useGlobalContext()
+	const { products, addItem } = useGlobalContext()
 
 	return (
 		<div>
 			<div className={ styles.products }>
 				{
 					products.map((product) => (
-						<SingleProduct addItem={ () => addItemCart(product.id) } key={ product.id } id={ product.id } text={ product.name } brand={ product.brand } price={ product.price } />
+						<SingleProduct addItem={ () => addItem(product.id) } key={ product.id } id={ product.id } text={ product.name } brand={ product.brand } price={ product.price } />
 					))
 				}
 			</div>

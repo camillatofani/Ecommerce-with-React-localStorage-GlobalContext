@@ -1,10 +1,9 @@
 import styles from './CartLists.module.css'
-import PropTypes from 'prop-types'
 import img from './../../assets/images/smartphone.jpg'
 import { useGlobalContext } from './../../GlobalContext'
 
-function CartLists({ removeItem }) {
-	const { cart, clearCart } = useGlobalContext()
+function CartLists() {
+	const { cart, removeItem, clearCart } = useGlobalContext()
 
 	return (
 		<div>
@@ -28,10 +27,5 @@ function CartLists({ removeItem }) {
 		</div>
 	)
 }
-
-CartLists.propTypes = {
-	removeItem: PropTypes.func
-}
-
 
 export default CartLists

@@ -9,6 +9,7 @@ export function useGlobalContext() {
 }
 
 export function GlobalProviderComponent({ children }) {
+	// Products list
 	const products = [
 		{
 			id: 1,
@@ -29,34 +30,50 @@ export function GlobalProviderComponent({ children }) {
 			price: 19.90
 		}
 	]
+
+	// Cart inital state
 	var initialStateCart = JSON.parse(localStorage.getItem('cart')) || []
 	const [cart, setCart] = useState(initialStateCart)
-	console.log(initialStateCart)
-
-	const addItemCart = (productId) => {
-		const newItem = products.filter((elem) => {
-			if (elem.id === productId) {
-				return elem
+	// ---- Function
+	// Add item cart
+	const addItem = (item) => {
+		const newCart = products.filter((cartItem) => {
+			if (cartItem.id === item) {
+				return cartItem
 			}
 		})
 		if (initialStateCart.length > 0) {
-			const updatedCart = [...initialStateCart, newItem[0]]
+			const updatedCart = [...initialStateCart, newCart[0]]
 			localStorage.setItem('cart', JSON.stringify(updatedCart))
 		} else {
-			localStorage.setItem('cart', JSON.stringify(newItem))
+			localStorage.setItem('cart', JSON.stringify(newCart))
 		}
-		setCart((old) => { return [...old, newItem[0]] })
+		setCart((old) => { return [...old, newCart[0]] })
 	}
-
+	// Remove item from cart
+	function removeItem(item) {
+		console.log(item)
+		let newCart = cart.filter((cartItem) => cartItem.id !== item)
+		setCart(newCart)
+		const lists = JSON.parse(localStorage.getItem('cart'))
+		if (lists) {
+			localStorage.setItem('cart', JSON.stringify(newCart))
+		}
+	}
+	// Clear cart
 	const clearCart = () => {
 		localStorage.removeItem('cart')
 		setCart([])
 	}
 
+	// Global Values
 	const globalValues = {
+		// Products
 		products,
+		// Cart
 		cart,
-		addItemCart,
+		addItem,
+		removeItem,
 		clearCart,
 	}
 
